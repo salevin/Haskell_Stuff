@@ -28,6 +28,9 @@ data Tree a = Leaf a | Node a (Tree a) (Tree a) deriving Show
 infPower2 = 1 : 2 : map (* 2) (tail infPower2)
 
 infTree :: a -> Tree a
+infTree x = Node x (infTree x) (infTree x)
 
 
--- | takeTree :: Integer -> Tree a -> Tree a
+takeTree :: Integer -> Tree a -> Tree a
+takeTree 0 (Node x y z) = Leaf x
+takeTree n (Node x y z) = Node x (takeTree (n-1) y) (takeTree (n-1) z) 
