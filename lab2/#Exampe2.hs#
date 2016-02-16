@@ -30,4 +30,5 @@ infPower2 = 1 : 2 : map (* 2) (tail infPower2)
 infTree :: a -> Tree a
 
 
+
 -- | takeTree :: Integer -> Tree a -> Tree a
